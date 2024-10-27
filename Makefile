@@ -2,7 +2,7 @@ ASM = nasm
 LINKER = gcc
 ASM_FLAGS = -f elf64
 
-OBJS = build/app.o build/matematicas.o build/enysa.o build/error_handler.o build/textoarchivo.o
+OBJS = build/app.o build/matematicas.o build/enysa.o build/manejoerrores.o build/textoarchivo.o
 
 all: calculadora
 
@@ -18,8 +18,8 @@ build/matematicas.o: requerimientos/matematicas.asm
 build/enysa.o: requerimientos/enysa.asm
 	$(ASM) $(ASM_FLAGS) -o build/enysa.o requerimientos/enysa.asm
 
-build/error_handler.o: requerimientos/error_handler.asm
-	$(ASM) $(ASM_FLAGS) -o build/error_handler.o requerimientos/error_handler.asm
+build/manejoerrores.o: requerimientos/manejoerrores.asm
+	$(ASM) $(ASM_FLAGS) -o build/manejoerrores.o requerimientos/manejoerrores.asm
 
 build/textoarchivo.o: requerimientos/textoarchivo.asm
 	$(ASM) $(ASM_FLAGS) -o build/textoarchivo.o requerimientos/textoarchivo.asm
